@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .modo-escuro {
+        background-color: #121212;
+        color: #f0f0f0;
+      }
+
+      .modo-escuro .navbar,
+      .modo-escuro .card,
+      .modo-escuro .btn {
+        background-color: #1f1f1f !important;
+        color: #f0f0f0 !important;
+      }
+
+      .modo-escuro .card-body {
+        background-color: #2b2b2b !important;
+      }
+
+      .modo-escuro input,
+      .modo-escuro textarea {
+        background-color: #2b2b2b;
+        color: #ffffff;
+      }
+
+      .modo-escuro a {
+        color: #9ecbff;
+      }
+
+      #toggle-tema {
+        z-index: 1050;
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      .modo-escuro #toggle-tema {
+        background-color: #333;
+        color: #f0f0f0;
+      }
+
+      body {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      #modalImagem {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .modal-body p {
+        color: inherit;
+      }
+
+      .modal-body {
+        text-align: center;
+      }
+
+      .modal .modal-title,
+      .modal .modal-body p {
+        color: #212529 !important;
+      }
+
+      .modo-escuro .modal .modal-title,
+      .modo-escuro .modal .modal-body p {
+        color: #f0f0f0 !important;
+      }
+      .modal .modal-body p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        text-align: justify;
+      }
+      .modal.show .modal-title,
+      .modal.show .modal-body p,
+      .modal.show #modalLink {
+        color: #212529 !important; 
+      }
+
+      .modo-escuro .modal.show .modal-title,
+      .modo-escuro .modal.show .modal-body p,
+      .modo-escuro .modal.show #modalLink {
+        color: #f0f0f0 !important;
+      }
+      .modo-escuro #modalLink.btn {
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+      }
+      .modal-content {
+        background-color: #ffffff;
+        color: #212529;
+      }
+
+      .modo-escuro .modal-content {
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+      }
+
+      .modo-escuro .modal-header,
+      .modo-escuro .modal-body,
+      .modo-escuro .modal-footer {
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+      }
+
+      .modo-escuro .btn-close {
+        filter: invert(1); 
+      }
+      
+      .modo-escuro .modal a.btn-primary {
+        background-color: #0d6efd !important; 
+        color: #ffffff !important;
+        border: none;
+      }
+      .modo-escuro .modal a.btn-primary:hover {
+        background-color: #0b5ed7 !important; 
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      id="toggle-tema"
+      class="btn btn-outline-secondary position-fixed top-0 end-0 m-3">
+      🌙
+    </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Meu Portfólio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-nav ms-auto"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#sobre">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projetos">Projetos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contato">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="sobre" class="container mt-5">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img
+            src="https://cdn.glitch.global/bc8b67c9-2d54-437d-819e-0b66d26bb34b/Profile.jpeg?v=1744312381432"
+            class="rounded-circle img-fluid"
+            alt="Descrição da imagem"
+            title="Titulo da imagem"
+            width="300"
+          />
+        </div>
+        <div class="col-md-8">
+          <h2>Sobre Mim</h2>
+          <p>
+            Olá! Meu nome é Pedro Soares e sou um desenvolvedor Web <br /><br />
+            Nesse site você encontrará alguns de meus jogos preferidos
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="projetos" class="container mt-5">
+      <h2 class="text-center mb-4">Meus Projetos</h2>
+
+      <div id="carouselProjetos" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carousel-inner">
+          <!-- Slides serão adicionados via JavaScript -->
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselProjetos"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselProjetos"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </section>
+    <div id="mensagem-dinamica" class="text-center mt-4">Se divirta</div>
+    <section id="contato" class="cotainer mt-5">
+      <h2 class="text-center mb-4">Contato</h2>
+      <form>
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome:</label>
+          <input type="text" class="form-control" id="nome" />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail:</label>
+          <input type="email" class="form-control" id="email" />
+        </div>
+        <div class="mb-3">
+          <label for="mensagem" class="form-label">Mensagem:</label>
+          <textarea class="form-control" id="mensagem" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Enviar</button>
+      </form>
+    </section>
+    <div id="resumo" class="mt-4 alert alert-info d-none"></div>
+    <!-- Modal para detalhes do projeto -->
+    <div
+      class="modal fade"
+      id="modalProjeto"
+      tabindex="-1"
+      aria-labelledby="modalProjetoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalProjetoLabel">
+              Título do Projeto
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img id="modalImagem" src=" " class="img-fluid rounded mb-3" />
+            <p id="modalDescricao"></p>
+            <a id="modalLink" href="#" target="_blank" class="btn btn-primary"
+              >Ver no site</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
